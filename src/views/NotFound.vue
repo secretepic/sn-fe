@@ -43,7 +43,7 @@ const backButtonLabel = "返回网站首页";
 <style scoped>
 .not-found-container {
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,6 @@ const backButtonLabel = "返回网站首页";
   position: relative;
   background-color: #f8fafc;
   overflow: hidden;
-  padding: 2rem;
 }
 
 .bg-decoration {
@@ -184,7 +183,6 @@ const backButtonLabel = "返回网站首页";
   background-color: currentColor;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
 }
 
 .icon-arrow-left::after {
@@ -195,7 +193,7 @@ const backButtonLabel = "返回网站首页";
   border-left: 2px solid currentColor;
   border-top: 2px solid currentColor;
   left: 0;
-  top: 50%;
+  top: 65%;
   transform: translateY(-70%) rotate(-45deg);
 }
 
@@ -211,8 +209,7 @@ const backButtonLabel = "返回网站首页";
   height: 120px;
   bottom: 10%;
   left: 10%;
-  transform: rotate(15deg);
-  animation: float 6s ease-in-out infinite;
+  animation: float 6s linear infinite;
 }
 
 .element-2 {
@@ -220,8 +217,7 @@ const backButtonLabel = "返回网站首页";
   height: 80px;
   top: 30%;
   left: 8%;
-  transform: rotate(-10deg);
-  animation: float 7s ease-in-out 1s infinite;
+  animation: float 7s linear 1s infinite;
 }
 
 .element-3 {
@@ -229,8 +225,7 @@ const backButtonLabel = "返回网站首页";
   height: 150px;
   bottom: 5%;
   right: 15%;
-  transform: rotate(5deg);
-  animation: float 8s ease-in-out 2s infinite;
+  animation: float 8s linear 2s infinite;
 }
 
 @keyframes fadeInUp {
@@ -241,14 +236,17 @@ const backButtonLabel = "返回网站首页";
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(var(--rotation, 0deg));
+  0% {
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-15px) rotate(var(--rotation, 0deg));
+    transform: translateY(0px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
   }
 }
+
 
 /* 响应式调整 */
 @media (max-width: 768px) {
