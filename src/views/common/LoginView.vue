@@ -91,7 +91,6 @@ const handleLogin = async () => {
       <form class="login-form" @submit.prevent="handleLogin">
         <!-- 用户名输入 -->
         <div class="form-group" :class="{ 'has-error': usernameError }">
-          <label for="username" class="form-label">用户名</label>
           <div class="input-wrapper">
             <i class="icon-user"></i>
             <input
@@ -113,7 +112,6 @@ const handleLogin = async () => {
 
         <!-- 密码输入 -->
         <div class="form-group" :class="{ 'has-error': passwordError }">
-          <label for="password" class="form-label">密码</label>
           <div class="input-wrapper">
             <i class="icon-lock"></i>
             <input
@@ -181,13 +179,12 @@ const handleLogin = async () => {
 <style scoped>
 .login-container {
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   background-color: #f8fafc;
-  padding: 1rem;
   overflow: hidden;
 }
 
@@ -257,11 +254,6 @@ const handleLogin = async () => {
   box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.2);
 }
 
-.form-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #334155;
-}
 
 .input-wrapper {
   position: relative;
@@ -486,23 +478,19 @@ const handleLogin = async () => {
 }
 
 .element-1 {
-  --rotation: 15deg;
   width: 180px;
   height: 180px;
   bottom: 5%;
   left: 5%;
   transform: rotate(-10deg);
-  animation: float 8s ease-in-out infinite;
 }
 
 .element-2 {
-  --rotation: 10deg;
   width: 120px;
   height: 120px;
   top: 20%;
   left: 10%;
   transform: rotate(5deg);
-  animation: float 7s ease-in-out 1s infinite;
 }
 
 .element-3 {
@@ -511,7 +499,6 @@ const handleLogin = async () => {
   bottom: 10%;
   right: 8%;
   transform: rotate(-5deg);
-  animation: float 9s ease-in-out 2s infinite;
 }
 
 @keyframes fadeInUp {
@@ -527,6 +514,7 @@ const handleLogin = async () => {
   }
 }
 
+/*
 @keyframes float {
   0%,
   100% {
@@ -535,7 +523,7 @@ const handleLogin = async () => {
   50% {
     transform: translateY(-15px) rotate(var(--rotation, 0deg));
   }
-}
+}*/
 
 /* 响应式调整 */
 @media (max-width: 480px) {
